@@ -1,0 +1,92 @@
+Генератор списка (list comprehension) квадратов от 1 до 10
+squares = [value ** 2 for value in range(1, 11)]
+# [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+Генератор списка кубов
+squares = [value ** 3 for value in range(1, 11)]
+# [1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]
+
+Деление по модулю - Делит левый операнд на правый и возвращает остаток.
+6 % 2 # 0
+7 % 2 # 1
+13.2 % 5 # 3.2
+
+Возведение в степень - возводит левый операнд в степень правого
+5 ** 2 # 25
+
+Целочисленное деление - Деление в котором возвращается только целая часть результата. Часть после запятой отбрасывается.
+12 // 5 # 2
+4 // 3 # 1
+
+Вычисление квадратного корня числа
+25 ** 0.5 # 5.0
+100 ** 0.5 # 10.0
+
+
+Способы записи числа
+billion = 1e9 # 1 миллиард, буквально: 1 и 9 нулей
+7.3e9 # 7.3 миллиардов (7,300,000,000)
+
+ms = 1e-3 # миллисекунда - 0.001
+mks = 1e-6 # микросекунда - 0.000001
+
+Неточные вычисления
+0.1 + 0.2 == 0.3 # False
+0.1 + 0.2 # 0.30000000000000004
+
+(0.1 * 10 + 0.2 * 10) / 10 # 0.3
+(0.28 * 100 + 0.14 * 100) / 100 # 0.4200000000000001
+
+Методы строк
+s = 'hello'
+s.center(20) # '       hello        '
+s.center(20, '-') # '-------hello--------'
+
+s.count('l') # 2 - подсчет количества вхождений символа в строке
+s.count('l', 0, 3) # 1 - ограниченный диапазон поиска вхождений
+
+Поиск подстроки в строке методами find  и index
+s.find('e') # 1 возвращает позицию символа в строке - его индекс или -1, если такой символ не найден
+s.index('e') # 1
+s.index('a') # ValueError: substring not found
+
+Форматирование строк
+name = 'John'
+age = 30
+
+Именные маркеры
+print('My name is %(name)s. I\'m %(age)d' %{'name':name, 'age':age})
+
+Позиционные маркеры
+print('My name is %s. I\'m %d' %(name, age))
+print('My name is %s. I\'m %d' %('Magax', 42))
+
+print('Title: %s, Price: %.2f' %('Sony', 40)) # Title: Sony, Price: 40.00
+
+Форматирование с помощью метода format()
+Позиционные
+print('My name is {}. I\'m {}'.format(name, age))
+print('My {1} name is {0}. I\'m {1}'.format(name, age))
+Именные
+print('My name is {name}. I\'m {age}'.format(name=name, age=age))
+print('My name is {name}. I\'m {age}'.format(name='Magax', age=42))
+
+Форматирование f-string
+print(f'My name is {name}. I\'m {age}')
+print(f'5 + 2 = {5 + 2}')
+
+
+Сокращенная запись условия IF
+x = 1
+res = 'OK' if x else 'NO'
+print(res) # OK
+или
+print('OK' if x else 'NO')
+
+git part
+echo "# fullman" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/ms77grz/fullman.git
+git push -u origin master
