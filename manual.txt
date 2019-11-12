@@ -90,3 +90,5 @@ git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/ms77grz/fullman.git
 git push -u origin master
+
+echo 'venv' > .gitignore
