@@ -92,3 +92,5 @@ git remote add origin https://github.com/ms77grz/fullman.git
 git push -u origin master
 
 echo 'venv' > .gitignore
+
+git clone https://github.com/ms77grz/fullman.git
