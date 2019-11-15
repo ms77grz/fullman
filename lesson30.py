@@ -1,8 +1,19 @@
 import os
-import random
+from random import randint, shuffle
+from libs import get_count, get_len
 
-os.chdir(r'c:\Users\Rizvan\Desktop\webapps\youtubes')
+os.chdir(r'c:\Users')
 print(os.getcwd())
-print(os.listdir()[-1])
+ld = os.listdir()
+print(ld)
+shuffle(ld)
+print(ld, len(ld))
+rnd = randint(0, len(ld)-1)
+print(rnd)
+print(ld[rnd])
 
-print(random.randint(1,100))
+print(get_count('asassin', 's'))
+print(get_len('summer'))
+
+gc = get_count # Функции можно присваивать переменным
+print(gc('wizard','w'))
