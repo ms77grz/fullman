@@ -1,6 +1,8 @@
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 import locale
-locale.setlocale(locale.LC_ALL, '')
+locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
+loc = locale.getlocale()
+print(loc)
 
 # date
 today = date.today()
@@ -29,5 +31,14 @@ print(now.microsecond)  # 987163
 
 days = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']
 print(days[now.weekday()])
-
 print(now.strftime('%A'))
+
+print(f'Дата: {now.strftime("%A, %d %b %Y")}')
+print(f'Время: {now.strftime("%H:%M:%S")}')
+
+print(now.strftime('%c'))
+print(now.strftime('%x'))
+print(now.strftime('%X'))
+
+print(now.strftime('%c'))
+print((now + timedelta(days=1, hours=2, minutes=10)).strftime('%c'))
