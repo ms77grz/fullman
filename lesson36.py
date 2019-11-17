@@ -9,6 +9,7 @@ class A:
         else:
             return 'Hello, ' + self.name
 
+
 a = A()
 b = A()
 
