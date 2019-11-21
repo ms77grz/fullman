@@ -8,3 +8,4 @@ def super_func(func):
 
 
 super_func(hello)
+# test
