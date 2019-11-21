@@ -8,4 +8,22 @@ def super_func(func):
 
 
 super_func(hello)
-# test
+test = hello
+print(test())
+
+
+def my_decorator(func):
+    def func_wrapper():
+        print('Code before')
+        func()
+        print('Code after')
+    return func_wrapper
+
+
+@my_decorator
+def func_test():
+    print('Hello, I am func "func_test"')
+
+# test = my_decorator(func_test)
+# test()
+func_test()
