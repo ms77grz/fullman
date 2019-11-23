@@ -24,6 +24,24 @@ def my_decorator(func):
 def func_test():
     print('Hello, I am func "func_test"')
 
+
 # test = my_decorator(func_test)
 # test()
 func_test()
+
+
+def make_title(func):
+    def wrapper():
+        title = func()
+        title = title.capitalize()
+        title = title.replace(',', '')
+        return title
+    return wrapper
+
+
+@make_title
+def hello_world():
+    return 'hello, world'
+
+
+print(hello_world())
