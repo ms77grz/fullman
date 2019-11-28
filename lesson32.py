@@ -1,6 +1,6 @@
 import os
 
-os.chdir(r'c:\Users\Rizvan\Desktop')  # Меняем текущий каталог
+os.chdir(r'c:\Users\777')  # Меняем текущий каталог
 print(os.getcwd())  # Проверяем
 
 # tree = os.walk('stories')
@@ -19,4 +19,4 @@ def read_dir(folder):
             print(f'{tab2}{file}')
 
 
-read_dir('stories')
+read_dir('Desktop')
