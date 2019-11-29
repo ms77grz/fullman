@@ -1,8 +1,26 @@
-import pandas as pd
+import zipfile
+import os
 
-df = pd.read_csv('data.csv', names=['CARD', 'PORT', 'USER'])
+dir = 'c:\\webapps\\fullman\\folder'
 
-ports = df['PORT'].unique().tolist()
+# my_zip = zipfile.ZipFile('test.zip', 'w')
 
-for port in ports:
-    print(port, df['USER'][df['PORT'] == port].count())
+my_zip = zipfile.ZipFile(os.path.join(dir, 'test.zip'), 'w')
+
+for folder, subfolder, files in os.walk(dir):
+    # print(folder, subfolder, files)
+    # print(folder)
+    # print(subfolder)
+    # print(files)
+    # print(folder,files)
+    for file in files:
+        print(file)
+        print(os.path.join(folder, file))
+        print(os.path.relpath(os.path.join(folder, file), dir))
+        if file == 'test.zip':
+            continue
+        # my_zip.write(os.path.join(folder, file), file, compress_type=zipfile.ZIP_DEFLATED)
+        my_zip.write(os.path.join(folder, file), os.path.relpath(
+            os.path.join(folder, file), dir), compress_type=zipfile.ZIP_DEFLATED)
+
+my_zip.close()
