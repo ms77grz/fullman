@@ -18,7 +18,8 @@ class ColorButton(object):
         self.master = master
         self.text_color = text_color
         self.hex_color = hex_color
-        self.button = Button(self.master, bg=self.hex_color, command=self.get_color)
+        self.button = Button(self.master, bg=self.hex_color,
+                             command=self.get_color)
         self.button.pack(fill='x')
 
     def get_color(self):
@@ -34,6 +35,5 @@ e.pack()
 
 for hex_color, text_color in colors.items():
     ColorButton(root, text_color, hex_color)
-
 
 root.mainloop()
