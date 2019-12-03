@@ -15,9 +15,10 @@ colors = {
 
 class ColorButton(object):
     def __init__(self, master, text_color, hex_color):
+        self.master = master
         self.text_color = text_color
         self.hex_color = hex_color
-        self.button = Button(root, bg=hex_color, command=self.get_color)
+        self.button = Button(self.master, bg=self.hex_color, command=self.get_color)
         self.button.pack(fill='x')
 
     def get_color(self):
